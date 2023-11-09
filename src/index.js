@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import path from 'path';
 import './database'
+import router from './routes/products.routes';
 
 //console.log('desde mi backend');
 
@@ -31,6 +32,9 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 //rutas de prueba
 
+app.use('/api-v1', router)
+
+/* 
 app.get('/', (req, res) => {
   res.send('Esto es una prueba de mi backend');
 });
@@ -38,3 +42,4 @@ app.get('/', (req, res) => {
 app.delete('/borrarProducto', (req, res) => {
   res.send('se borró el producto');
 });
+ */

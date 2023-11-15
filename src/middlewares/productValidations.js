@@ -12,7 +12,7 @@ const productValidate = [
     .notEmpty()
     .withMessage('El precio es obligatorio')
     .custom((value) => {
-      if (value >= 0 && value <= 100) {
+      if (value >= 0 && value <= 10000) {
         return true;
       } else {
         throw new Error('El precio debe estar entre 0 y 10000');

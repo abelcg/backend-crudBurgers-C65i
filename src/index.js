@@ -4,7 +4,8 @@ import cors from 'cors';
 import path from 'path';
 import './database'
 import router from './routes/products.routes';
-import 'dotenv/config'
+import 'dotenv/config';
+import auth from './routes/users.routes';
 
 //console.log('desde mi backend');
 
@@ -33,7 +34,8 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 //rutas de prueba
 
-app.use('/api-v1', router)
+app.use('/api-v1', router);
+app.use('/api-v1/auth', auth);
 
 /* 
 app.get('/', (req, res) => {
